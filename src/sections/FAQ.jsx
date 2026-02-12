@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Layout from "../components/Layout";
 import SectionTitle from "../components/SectionTitle";
+import FadeInSection from "../components/FadeInSection";
 
 function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
@@ -39,32 +40,33 @@ function FAQ() {
   return (
     <Layout id="faq" className="bg-stone-50">
       <SectionTitle>Frequently Asked Questions</SectionTitle>
-
-      <div className="max-w-2xl mx-auto space-y-4">
-        {faqs.map((faq, index) => (
-          <div
-            key={index}
-            className="bg-white rounded-lg shadow-md overflow-hidden"
-          >
-            <button
-              onClick={() => setOpenIndex(openIndex === index ? null : index)}
-              className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-emerald-50 transition"
+      <FadeInSection>
+        <div className="max-w-2xl mx-auto space-y-4">
+          {faqs.map((faq, index) => (
+            <div
+              key={index}
+              className="bg-white rounded-lg shadow-md overflow-hidden"
             >
-              <span className="font-semibold text-stone-800">
-                {faq.question}
-              </span>
-              <span className="text-emerald-800 text-xl">
-                {openIndex === index ? "−" : "+"}
-              </span>
-            </button>
-            {openIndex === index && (
-              <div className="px-6 py-4 bg-emerald-50 text-stone-700">
-                {faq.answer}
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
+              <button
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-emerald-50 transition"
+              >
+                <span className="font-semibold text-stone-800">
+                  {faq.question}
+                </span>
+                <span className="text-emerald-800 text-xl">
+                  {openIndex === index ? "−" : "+"}
+                </span>
+              </button>
+              {openIndex === index && (
+                <div className="px-6 py-4 bg-emerald-50 text-stone-700">
+                  {faq.answer}
+                </div>
+              )}
+            </div>
+          ))}
+        </div>
+      </FadeInSection>
     </Layout>
   );
 }
