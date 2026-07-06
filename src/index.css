@@ -1,10 +1,50 @@
 @import "tailwindcss";
 
+@theme {
+  /* ── Typography ───────────────────────────────────────── */
+  --font-serif: 'Cormorant Garamond', Georgia, serif;
+
+  /* ── Champagne — warm ivory/cream backgrounds ─────────── */
+  --color-champagne-50:  #FDFAF5;
+  --color-champagne-100: #F9F0E1;
+  --color-champagne-200: #F2E2C8;
+  --color-champagne-300: #E8D0AE;
+
+  /* ── Gold — metallic accent ───────────────────────────── */
+  --color-gold-100: #F5EAC8;
+  --color-gold-200: #E8D5A3;
+  --color-gold-300: #D4B878;
+  --color-gold-400: #C9A96E;
+  --color-gold-500: #B8872E;
+  --color-gold-600: #9A6E1E;
+  --color-gold-700: #7A5410;
+
+  /* ── Warm — body text ─────────────────────────────────── */
+  --color-warm-50:  #F7F4EF;
+  --color-warm-100: #EDE8DF;
+  --color-warm-400: #A08870;
+  --color-warm-500: #8B7355;
+  --color-warm-600: #6B5540;
+  --color-warm-700: #4A3728;
+  --color-warm-800: #332516;
+  --color-warm-900: #1E150A;
+
+  /* ── Charcoal — dark backgrounds ─────────────────────── */
+  --color-charcoal-700: #3A3430;
+  --color-charcoal-800: #2A2420;
+  --color-charcoal-900: #1A1410;
+
+  /* ── Silver — cool secondary accents ─────────────────── */
+  --color-silver-200: #E4E5E9;
+  --color-silver-300: #C8CAD0;
+  --color-silver-400: #9CA0A8;
+}
+
 body {
   margin: 0;
-  font-family:
-    "Inter",
-    system-ui,
-    -apple-system,
-    sans-serif;
+  font-family: 'Lato', system-ui, -apple-system, sans-serif;
+  background-color: #FDFAF5;
+  color: #4A3728;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

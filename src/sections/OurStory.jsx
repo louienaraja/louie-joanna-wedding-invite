@@ -4,11 +4,11 @@ import FadeInSection from "../components/FadeInSection";
 
 function OurStory() {
   return (
-    <Layout id="our-story" className="bg-stone-50">
+    <Layout id="our-story" className="bg-champagne-50">
       <FadeInSection>
         <SectionTitle>Our Story</SectionTitle>
 
-        <div className="prose prose-lg max-w-2xl mx-auto text-stone-700">
+        <div className="prose prose-lg max-w-2xl mx-auto text-warm-700">
           <p className="text-center leading-relaxed mb-6">
             [Our story here - how we met, first date, proposal, etc.]
           </p>

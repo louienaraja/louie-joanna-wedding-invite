@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AnimatePresence, motion } from "framer-motion";
 import Layout from "../components/Layout";
 import SectionTitle from "../components/SectionTitle";
 import FadeInSection from "../components/FadeInSection";
@@ -9,7 +10,8 @@ function FAQ() {
   const faqs = [
     {
       question: "What should I wear?",
-      answer: "TBD.",
+      answer: null,
+      scrollTo: "what-to-wear", // links to the WhatToWear section instead of expanding
     },
     {
       question: "Will there be transportation?",
@@ -37,31 +39,67 @@ function FAQ() {
     },
   ];
 
+  const handleClick = (faq, index) => {
+    if (faq.scrollTo) {
+      document.getElementById(faq.scrollTo)?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      setOpenIndex(openIndex === index ? null : index);
+    }
+  };
+
   return (
-    <Layout id="faq" className="bg-stone-50">
+    <Layout id="faq" className="bg-champagne-50">
       <SectionTitle>Frequently Asked Questions</SectionTitle>
       <FadeInSection>
-        <div className="max-w-2xl mx-auto space-y-4">
+        <div className="max-w-2xl mx-auto space-y-3">
           {faqs.map((faq, index) => (
             <div
               key={index}
-              className="bg-white rounded-lg shadow-md overflow-hidden"
+              className="bg-white border border-gold-100 rounded shadow-sm overflow-hidden"
             >
               <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-emerald-50 transition"
+                onClick={() => handleClick(faq, index)}
+                className="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-champagne-50 transition-colors duration-200"
               >
-                <span className="font-semibold text-stone-800">
+                <span className="font-medium text-warm-800 text-sm md:text-base">
                   {faq.question}
                 </span>
-                <span className="text-emerald-800 text-xl">
-                  {openIndex === index ? "−" : "+"}
-                </span>
+
+                {faq.scrollTo ? (
+                  // Link-style affordance — no rotation animation
+                  <span className="text-gold-400 text-base ml-4 flex-shrink-0 leading-none">
+                    →
+                  </span>
+                ) : (
+                  // Normal expand/collapse
+                  <motion.span
+                    animate={{ rotate: openIndex === index ? 45 : 0 }}
+                    transition={{ duration: 0.25, ease: "easeInOut" }}
+                    className="text-gold-400 text-xl ml-4 flex-shrink-0 leading-none"
+                  >
+                    +
+                  </motion.span>
+                )}
               </button>
-              {openIndex === index && (
-                <div className="px-6 py-4 bg-emerald-50 text-stone-700">
-                  {faq.answer}
-                </div>
+
+              {/* Only render accordion body for non-link items */}
+              {!faq.scrollTo && (
+                <AnimatePresence initial={false}>
+                  {openIndex === index && (
+                    <motion.div
+                      key="answer"
+                      initial={{ height: 0, opacity: 0 }}
+                      animate={{ height: "auto", opacity: 1 }}
+                      exit={{ height: 0, opacity: 0 }}
+                      transition={{ duration: 0.3, ease: [0.4, 0, 0.2, 1] }}
+                      style={{ overflow: "hidden" }}
+                    >
+                      <div className="px-6 py-4 text-warm-700 text-sm leading-relaxed border-t border-gold-100 bg-champagne-50/60">
+                        {faq.answer}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               )}
             </div>
           ))}
