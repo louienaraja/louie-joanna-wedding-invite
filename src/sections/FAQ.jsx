@@ -30,7 +30,7 @@ function FAQ() {
     {
       question: "Are kids welcome?",
       answer:
-        "Yes! Kids under 12 are welcome. Please indicate their attendance in your RSVP.",
+        "Kids who are included in your invitation are more than welcome to join! Please indicate their attendance when you RSVP. As we're working with a fixed guest count, kindly check your invitation to see if your little ones are included.",
     },
     {
       question: "Is there a gift registry?",
@@ -41,7 +41,9 @@ function FAQ() {
 
   const handleClick = (faq, index) => {
     if (faq.scrollTo) {
-      document.getElementById(faq.scrollTo)?.scrollIntoView({ behavior: "smooth" });
+      document
+        .getElementById(faq.scrollTo)
+        ?.scrollIntoView({ behavior: "smooth" });
     } else {
       setOpenIndex(openIndex === index ? null : index);
     }
