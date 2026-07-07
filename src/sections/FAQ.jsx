@@ -23,6 +23,11 @@ function FAQ() {
         "Due to limited capacity, we can only accommodate those listed on your invitation.",
     },
     {
+      question: "I can't make it — can I still watch?",
+      answer:
+        "We'll miss having you there in person! You can watch the ceremony live via our YouTube livestream: https://youtube.com/@joshuasariego. We can't wait to celebrate with you, even from afar",
+    },
+    {
       question: "What's the weather like in November?",
       answer:
         "November in Palawan is typically dry and pleasant (25-30°C). We recommend bringing sunscreen and staying hydrated!",
@@ -50,7 +55,7 @@ function FAQ() {
   };
 
   return (
-    <Layout id="faq" className="bg-champagne-50">
+    <Layout id="faq" className="bg-champagne-100">
       <SectionTitle>Frequently Asked Questions</SectionTitle>
       <FadeInSection>
         <div className="max-w-2xl mx-auto space-y-3">

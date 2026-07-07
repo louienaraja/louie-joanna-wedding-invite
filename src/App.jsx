@@ -4,6 +4,7 @@ import OurStory from "./sections/OurStory";
 import Travel from "./sections/Travel";
 import WhatToWear from "./sections/WhatToWear";
 import RSVP from "./sections/RSVP";
+import Entourage from "./sections/Entourage";
 import FAQ from "./sections/FAQ";
 import Footer from "./components/Footer";
 
@@ -16,6 +17,7 @@ function App() {
       <Travel />
       <WhatToWear />
       <RSVP />
+      <Entourage />
       <FAQ />
       <Footer />
     </div>
