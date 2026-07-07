@@ -55,11 +55,6 @@ function Hero() {
         <span className="absolute bottom-0 left-0 w-10 h-10 border-b border-l border-gold-300/70" />
         <span className="absolute bottom-0 right-0 w-10 h-10 border-b border-r border-gold-300/70" />
 
-        {/* Eyebrow */}
-        <p className="text-xs tracking-[0.3em] uppercase text-warm-500 mb-3">
-          You are cordially invited to celebrate
-        </p>
-
         {/* Names */}
         <h1 className="font-serif text-6xl md:text-8xl text-warm-900 font-light leading-tight mb-1">
           Louie &amp; Joanna
@@ -72,10 +67,10 @@ function Hero() {
           <div className="h-px w-12 bg-gold-300" />
         </div>
 
-        <p className="font-serif text-2xl md:text-3xl italic text-warm-600 mb-1">
+        <p className="font-serif text-2xl md:text-3xl italic text-warm-600 mb-4">
           are getting married!
         </p>
-        <p className="text-sm tracking-widest uppercase text-warm-500 mt-1">
+        <p className="text-sm tracking-widest uppercase text-warm-500 mt-3">
           November 11, 2026 &nbsp;·&nbsp; Puerto Princesa, Palawan
         </p>
       </div>

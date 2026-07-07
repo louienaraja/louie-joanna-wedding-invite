@@ -30,7 +30,7 @@ const doNotWear = [
 const reservedFabrics = [
   "Metallic Gazar *",
   "Gazar",
-  "Gazar façonné",
+  "Gaze façonné",
   "Duchesse satin",
 ];
 
