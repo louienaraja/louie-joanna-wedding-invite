@@ -1,8 +1,18 @@
 import Layout from "../components/Layout";
 import SectionTitle from "../components/SectionTitle";
 import FadeInSection from "../components/FadeInSection";
-import barongImg from "../assets/images/barong-removebg.png";
-import gazarImg from "../assets/images/metallic_gazar-removebg.png";
+import barongImg from "../assets/images/barong_charcoal_cropped.png";
+import gazarImg from "../assets/images/metallic_gazar_charcoal_cropped.png";
+
+// ── Data ───────────────────────────────────────────────────────────────────
+
+const ninangColors = [
+  { name: "Champagne", hex: "#D4C5A9" },
+  { name: "Warm Taupe", hex: "#B5A99A" },
+  { name: "Honey Beige", hex: "#DDC49A" },
+  { name: "Soft Pearl", hex: "#D9D2C8" },
+  { name: "Almond Beige", hex: "#D0C4B0" },
+];
 
 const allowedColors = [
   { name: "Warm cream", hex: "#EDE0CC" },
@@ -17,46 +27,71 @@ const allowedColors = [
   { name: "Deep mocha", hex: "#7A6B5A" },
 ];
 
-const ninangColors = [
-  { name: "Champagne Gold", hex: "#D4AF6E" },
-  { name: "Silver / Pewter", hex: "#C2B9AA" },
-  { name: "Champagne", hex: "#D4C5A9" },
-  { name: "Warm Taupe", hex: "#B5A99A" },
+// Colors only — no fabrics/styles
+const colorsToAvoid = [
+  "Pure white",
+  "Ivory / cream white",
+  "Stark black",
+  "Bright red",
+  "Hot pink / neon",
+  "Bright orange",
+  "Bright yellow",
+  "Electric blue",
+  "Bright purple",
 ];
 
-// Items with img: a src string → renders as <img>; others get the plain ✕
-const doNotWear = [
-  { label: "Pure white" },
-  { label: "Ivory / cream white" },
-  { label: "Stark black" },
-  { label: "Bright red" },
-  { label: "Hot pink / neon" },
-  { label: "Bright orange" },
-  { label: "Bright yellow" },
-  { label: "Electric blue" },
-  { label: "Bright purple" },
+// Featured restrictions — full-width rows with illustration
+const featuredReserved = [
   {
-    label: "Metallic Gazar",
-    note: "reserved for the bride",
+    name: "Metallic Gazar",
+    asterisk: true,
     img: gazarImg,
-    imgAlt: "Metallic gazar fabric — do not wear",
+    imgAlt: "Metallic gazar fabric",
+    note: "reserved for the bride",
   },
   {
-    label: "Chinese collared barong",
-    note: "reserved for the groom & both fathers",
+    name: "Chinese collared barong",
     img: barongImg,
-    imgAlt: "Chinese collared barong — do not wear",
+    imgAlt: "Chinese collared barong",
+    note: "reserved for the groom & both fathers",
   },
 ];
 
-// asterisk: true → rendered with * and covered by the footnote
-const reservedFabrics = [
-  { name: "Metallic Gazar", asterisk: true },
-  { name: "Piña Cocoon", asterisk: true },
+// Secondary restrictions — plain text pills
+const plainReserved = [
   { name: "Gazar" },
   { name: "Gazar façonné" },
   { name: "Duchesse satin" },
+  { name: "Piña Cocoon", asterisk: true },
 ];
+
+// ── Shared swatch component ────────────────────────────────────────────────
+
+function SwatchGrid({ colors, cols = 5 }) {
+  return (
+    <div
+      className={`grid gap-x-2 gap-y-5 md:gap-x-4 md:gap-y-6`}
+      style={{ gridTemplateColumns: `repeat(${cols}, minmax(0, 1fr))` }}
+    >
+      {colors.map((color) => (
+        <div key={color.hex} className="flex flex-col items-center text-center">
+          <div
+            className="w-10 h-10 md:w-13 md:h-13 rounded-full shadow-sm border border-black/8 flex-shrink-0"
+            style={{ backgroundColor: color.hex }}
+          />
+          <p className="text-[9px] md:text-[11px] text-warm-700 mt-2 leading-tight font-medium px-0.5">
+            {color.name}
+          </p>
+          <p className="text-[8px] md:text-[10px] text-warm-400 font-mono tracking-tight mt-0.5">
+            {color.hex}
+          </p>
+        </div>
+      ))}
+    </div>
+  );
+}
+
+// ── Component ──────────────────────────────────────────────────────────────
 
 function WhatToWear() {
   return (
@@ -65,106 +100,108 @@ function WhatToWear() {
         <SectionTitle>What to Wear</SectionTitle>
 
         <div className="max-w-2xl mx-auto space-y-8">
-          {/* ── Female Principal Sponsors palette ────────── */}
+          {/* 1 ── Ninang palette ─────────────────────────── */}
           <div>
             <p className="text-xs tracking-widest uppercase text-gold-500 font-semibold text-center mb-6">
               For Our Ninangs
             </p>
-            <div className="grid grid-cols-4 gap-x-2 gap-y-5 md:gap-x-4 md:gap-y-6">
-              {ninangColors.map((color) => (
-                <div
-                  key={color.hex}
-                  className="flex flex-col items-center text-center"
-                >
-                  <div
-                    className="w-10 h-10 md:w-13 md:h-13 rounded-full shadow-sm border border-black/8 flex-shrink-0"
-                    style={{ backgroundColor: color.hex }}
-                  />
-                  <p className="text-[9px] md:text-[11px] text-warm-700 mt-2 leading-tight font-medium px-0.5">
-                    {color.name}
-                  </p>
-                  <p className="text-[8px] md:text-[10px] text-warm-400 font-mono tracking-tight mt-0.5">
-                    {color.hex}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <SwatchGrid colors={ninangColors} cols={5} />
           </div>
 
           <div className="border-t border-gold-100" />
 
-          {/* ── Allowed colour palette ───────────────────── */}
+          {/* 2 ── Guest palette ──────────────────────────── */}
           <div>
             <p className="text-xs tracking-widest uppercase text-gold-500 font-semibold text-center mb-6">
               Guest Colour Palette
             </p>
-            <div className="grid grid-cols-5 gap-x-2 gap-y-5 md:gap-x-4 md:gap-y-6">
-              {allowedColors.map((color) => (
-                <div
-                  key={color.hex}
-                  className="flex flex-col items-center text-center"
+            <SwatchGrid colors={allowedColors} cols={5} />
+          </div>
+
+          <div className="border-t border-gold-100" />
+
+          {/* 3 ── Colors to Avoid ────────────────────────── */}
+          <div>
+            <p className="text-xs tracking-widest uppercase text-gold-500 font-semibold text-center mb-5">
+              Colors to Avoid
+            </p>
+            <div className="flex flex-wrap gap-2 justify-center">
+              {colorsToAvoid.map((label) => (
+                <span
+                  key={label}
+                  className="flex items-center gap-1.5 text-xs md:text-sm text-warm-700 bg-white border border-warm-100 rounded-full px-3 py-1.5"
                 >
-                  <div
-                    className="w-10 h-10 md:w-13 md:h-13 rounded-full shadow-sm border border-black/8 flex-shrink-0"
-                    style={{ backgroundColor: color.hex }}
-                  />
-                  <p className="text-[9px] md:text-[11px] text-warm-700 mt-2 leading-tight font-medium px-0.5">
-                    {color.name}
-                  </p>
-                  <p className="text-[8px] md:text-[10px] text-warm-400 font-mono tracking-tight mt-0.5">
-                    {color.hex}
-                  </p>
-                </div>
+                  <span className="text-red-400 text-[10px] leading-none flex-shrink-0">
+                    ✕
+                  </span>
+                  {label}
+                </span>
               ))}
             </div>
           </div>
 
           <div className="border-t border-gold-100" />
 
-          {/* ── Do not wear ──────────────────────────────── */}
-          <div>
-            <p className="text-xs tracking-widest uppercase text-gold-500 font-semibold text-center mb-5">
-              Please Do Not Wear
+          {/* 4 ── Reserved Fabrics & Styles ──────────────── */}
+          <div className="bg-white border border-gold-200 rounded p-5">
+            <p className="text-xs tracking-widest uppercase text-gold-500 font-semibold mb-2">
+              Reserved Fabrics &amp; Styles
             </p>
-            <div className="flex flex-wrap gap-2 justify-center">
-              {doNotWear.map((item) =>
-                item.img ? (
-                  /* Image-illustrated pill — slightly warm bg to match illustration bg */
-                  <span
-                    key={item.label}
-                    className="flex items-center gap-2 text-xs md:text-sm text-warm-700 bg-white border border-warm-100 rounded-full px-3 py-1.5"
-                  >
-                    <img
-                      src={item.img}
-                      alt={item.imgAlt}
-                      className="h-10 w-auto flex-shrink-0 rounded-sm"
-                    />
-                    <span>
-                      {item.label}
-                      {item.note && (
-                        <span className="text-warm-400 text-[10px] ml-1 normal-case">
-                          ({item.note})
-                        </span>
+            <p className="text-warm-600 text-sm leading-relaxed mb-4">
+              The following fabrics and styles are reserved for the bride,
+              groom, both families, and the entourage. Please avoid wearing them
+              as a guest.
+            </p>
+            {/* Featured: full-width rows with illustration */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
+              {" "}
+              {featuredReserved.map((item) => (
+                <div
+                  key={item.name}
+                  className="flex items-center gap-3 bg-champagne-50 border border-gold-100 rounded px-4 py-3"
+                >
+                  <img
+                    src={item.img}
+                    alt={item.imgAlt}
+                    className="h-15 w-auto flex-shrink-0 rounded-sm"
+                  />
+                  <div>
+                    <span className="text-sm font-medium text-warm-800">
+                      {item.name}
+                      {item.asterisk && (
+                        <sup className="text-gold-500 ml-0.5">*</sup>
                       )}
                     </span>
-                  </span>
-                ) : (
-                  /* Standard text pill */
-                  <span
-                    key={item.label}
-                    className="flex items-center gap-1.5 text-xs md:text-sm text-warm-700 bg-white border border-warm-100 rounded-full px-3 py-1.5"
-                  >
-                    <span className="text-red-400 text-[10px] leading-none flex-shrink-0">
-                      ✕
-                    </span>
-                    <span>{item.label}</span>
-                  </span>
-                ),
-              )}
+                    {item.note && (
+                      <p className="text-warm-400 text-xs mt-0.5">
+                        ({item.note})
+                      </p>
+                    )}
+                  </div>
+                </div>
+              ))}
             </div>
+
+            {/* Secondary: plain fabric text pills */}
+            <div className="flex flex-wrap gap-2 mb-3">
+              {plainReserved.map((item) => (
+                <span
+                  key={item.name}
+                  className="italic text-warm-700 text-sm bg-champagne-50 border border-gold-100 rounded px-3 py-1"
+                >
+                  {item.name}
+                  {item.asterisk && (
+                    <sup className="text-gold-500 not-italic ml-0.5">*</sup>
+                  )}
+                </span>
+              ))}
+            </div>
+            <p className="text-warm-400 text-xs italic">
+              * Exclusively reserved for the bride & groom
+            </p>
           </div>
 
-          {/* ── Dress code notes callout ─────────────────── */}
+          {/* 5 ── Additional Notes ───────────────────────── */}
           <div className="bg-white border border-gold-200 rounded p-5 space-y-3">
             <p className="text-xs tracking-widest uppercase text-gold-500 font-semibold mb-1">
               Additional Notes
@@ -189,36 +226,6 @@ function WhatToWear() {
                 black pants.
               </span>
             </div>
-          </div>
-
-          <div className="border-t border-gold-100" />
-
-          {/* ── Reserved fabrics ─────────────────────────── */}
-          <div className="bg-white border border-gold-200 rounded p-5">
-            <p className="text-xs tracking-widest uppercase text-gold-500 font-semibold mb-2">
-              Reserved Fabrics
-            </p>
-            <p className="text-warm-600 text-sm leading-relaxed mb-4">
-              The following fabrics are reserved exclusively for the bride, both
-              mothers, entourage, and sponsors. Please avoid wearing them as a
-              guest.
-            </p>
-            <div className="flex flex-wrap gap-2 mb-3">
-              {reservedFabrics.map((fabric) => (
-                <span
-                  key={fabric.name}
-                  className="italic text-warm-700 text-sm bg-champagne-50 border border-gold-100 rounded px-3 py-1"
-                >
-                  {fabric.name}
-                  {fabric.asterisk && (
-                    <sup className="text-gold-500 not-italic ml-0.5">*</sup>
-                  )}
-                </span>
-              ))}
-            </div>
-            <p className="text-warm-400 text-xs italic">
-              *Exclusively reserved for the bride&apos;s gown
-            </p>
           </div>
         </div>
       </FadeInSection>
