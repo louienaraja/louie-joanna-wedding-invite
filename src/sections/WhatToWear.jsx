@@ -40,6 +40,12 @@ const colorsToAvoid = [
   "Bright purple",
 ];
 
+// Reserved colors for mothers — centered pair with attribution note
+const motherColors = [
+  { name: "Champagne Gold", hex: "#D4AF6E", reservedFor: "Bride's Mother" },
+  { name: "Silver Taupe", hex: "#D5C9C0", reservedFor: "Groom's Mother" },
+];
+
 // Featured restrictions — full-width rows with illustration
 const featuredReserved = [
   {
@@ -142,8 +148,38 @@ function WhatToWear() {
 
           <div className="border-t border-gold-100" />
 
-          {/* 4 ── Reserved Fabrics & Styles ──────────────── */}
+          {/* 4+5 ── Reserved Colors (Mothers) + Reserved Fabrics & Styles ── */}
           <div className="bg-white border border-gold-200 rounded p-5">
+            {/* Mothers palette */}
+            <p className="text-xs tracking-widest uppercase text-gold-500 font-semibold mb-5">
+              Reserved Colors — Mothers
+            </p>
+            <div className="max-w-xs mx-auto grid grid-cols-2 gap-x-6 gap-y-5 mb-6">
+              {motherColors.map((color) => (
+                <div
+                  key={color.hex}
+                  className="flex flex-col items-center text-center"
+                >
+                  <div
+                    className="w-10 h-10 md:w-13 md:h-13 rounded-full shadow-sm border border-black/8 flex-shrink-0"
+                    style={{ backgroundColor: color.hex }}
+                  />
+                  <p className="text-[9px] md:text-[11px] text-warm-700 mt-2 leading-tight font-medium px-0.5">
+                    {color.name}
+                  </p>
+                  <p className="text-[8px] md:text-[10px] text-warm-400 font-mono tracking-tight mt-0.5">
+                    {color.hex}
+                  </p>
+                  <p className="text-[9px] md:text-[10px] text-warm-400 italic mt-1 leading-tight">
+                    {color.reservedFor}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            <div className="border-t border-gold-100 mb-5" />
+
+            {/* Fabrics & styles */}
             <p className="text-xs tracking-widest uppercase text-gold-500 font-semibold mb-2">
               Reserved Fabrics &amp; Styles
             </p>
