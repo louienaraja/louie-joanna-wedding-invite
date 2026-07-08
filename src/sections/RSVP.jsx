@@ -36,6 +36,7 @@ function RSVP() {
     const e = {};
     if (!form.fullName.trim()) e.fullName = "Please enter your full name.";
     if (!form.attending) e.attending = "Please let us know if you'll be attending.";
+    if (!form.contact.trim()) e.contact = "Please enter your contact number.";
     return e;
   };
 
@@ -188,19 +189,19 @@ function RSVP() {
                 {/* Contact */}
                 <div>
                   <label className={labelClass}>
-                    Contact Number or Email
-                    <span className="ml-2 font-normal normal-case tracking-normal text-warm-400 text-[10px]">
-                      optional
-                    </span>
+                    Contact Number (Viber, Messenger, etc.){" "}
+                    <span className="text-red-400">*</span>
                   </label>
                   <input
                     type="text"
                     value={form.contact}
                     onChange={set("contact")}
-                    placeholder="So we can reach you if needed"
-                    autoComplete="email tel"
+                    placeholder="Your contact number"
+                    autoComplete="tel"
                     className={inputClass}
+                    required
                   />
+                  <FieldError msg={errors.contact} />
                 </div>
 
                 {/* Error banner */}

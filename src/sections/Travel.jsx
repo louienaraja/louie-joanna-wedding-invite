@@ -69,16 +69,42 @@ function Travel() {
 
           {/* Getting There */}
           <Card title="Getting There">
-            <p className="text-warm-700 text-sm leading-relaxed mb-3">
+            <p className="text-warm-700 text-sm leading-relaxed mb-5">
               <strong className="text-warm-800">By Air:</strong> Fly to Puerto
               Princesa International Airport (PPS). Direct flights available from
               Manila, Clark, and other major cities.
             </p>
-            <p className="text-warm-700 text-sm leading-relaxed">
-              <strong className="text-warm-800">From Airport to Venue:</strong>{" "}
-              Citystate Asturias Hotel is approximately 15–20 minutes by taxi or
-              Grab from the airport.
+            <p className="text-xs tracking-widest uppercase text-gold-500 font-semibold mb-3">
+              From the Airport
             </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+              <div className="bg-champagne-50 border border-gold-100 rounded p-4">
+                <p className="text-xs tracking-widest uppercase text-gold-500 font-semibold mb-1.5">
+                  Ceremony
+                </p>
+                <p className="font-serif text-sm text-warm-800 font-light leading-snug mb-2">
+                  Divine Mercy Shrine &amp; Parish
+                </p>
+                <p className="text-warm-600 text-sm">
+                  Approx.{" "}
+                  <strong className="text-warm-800">10–15 min</strong> by taxi,
+                  Grab, or tricycle
+                </p>
+              </div>
+              <div className="bg-champagne-50 border border-gold-100 rounded p-4">
+                <p className="text-xs tracking-widest uppercase text-gold-500 font-semibold mb-1.5">
+                  Reception
+                </p>
+                <p className="font-serif text-sm text-warm-800 font-light leading-snug mb-2">
+                  Citystate Asturias Hotel
+                </p>
+                <p className="text-warm-600 text-sm">
+                  Approx.{" "}
+                  <strong className="text-warm-800">10–15 min</strong> by taxi,
+                  Grab, or tricycle
+                </p>
+              </div>
+            </div>
           </Card>
 
           {/* Accommodations */}

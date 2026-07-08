@@ -93,7 +93,7 @@ function Entourage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {[
             "Dr. Glenn R. Puertollano",
-            "Mr. Derek R. Puertollano",
+            "Atty. Derek R. Puertollano",
             "Mr. Jose F. Sariego",
             "Dr. Edmundo T. Aralar",
             "Mr. Alonzo C. Española",
@@ -200,13 +200,13 @@ function Entourage() {
         <GroupLabel>Bearers &amp; Flower Girls</GroupLabel>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
           <Card className="text-center col-span-1 flex flex-col items-center justify-center min-h-32">
-            <NameEntry role="Coin Bearer" name="Monica Louise Naraja" />
+            <NameEntry role="Coin Custodian" name="Monica Louise Naraja" />
           </Card>
           <Card className="text-center col-span-1 flex flex-col items-center justify-center min-h-32">
-            <NameEntry role="Ring Bearer" name="Siva Garay" />
+            <NameEntry role="Ring Custodian" name="Matthew Ivan Naraja" />
           </Card>
           <Card className="text-center col-span-1 flex flex-col items-center justify-center min-h-32">
-            <NameEntry role="Bible Bearer" name="Mercedita R. Puertollano" />
+            <NameEntry role="Bible Custodian" name="Mercedita R. Puertollano" />
           </Card>
           <Card className="text-center col-span-2 sm:col-span-1 flex flex-col items-center justify-center min-h-32">
             <p className="text-xs uppercase tracking-widest text-gold-500 mb-3">
@@ -215,7 +215,7 @@ function Entourage() {
             <div className="space-y-3">
               <NameEntry name="Czarina Margaux F. Puertollano" />
               <div className="text-center text-gold-300 text-xs">&amp;</div>
-              <NameEntry name="Cassie Cruz" />
+              <NameEntry name="Sophie Aulivia Chanel Cruz" />
             </div>
           </Card>
         </div>

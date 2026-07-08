@@ -3,7 +3,13 @@
     "allow": [
       "Bash(npm run *)",
       "Bash(npx vite *)",
-      "Bash(curl -s http://localhost:5174)"
+      "Bash(curl -s http://localhost:5174)",
+      "Bash(magick identify *)",
+      "Bash(node *)",
+      "Bash(python -c \"from PIL import Image; print\\('PIL available'\\)\")",
+      "Bash(python3 -c \"from PIL import Image; print\\('PIL available'\\)\")",
+      "Bash(npm install *)",
+      "Bash(powershell *)"
     ]
   }
 }
