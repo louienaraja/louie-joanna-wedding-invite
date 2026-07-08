@@ -239,7 +239,7 @@ function WhatToWear() {
 
           {/* 5 ── Additional Notes ───────────────────────── */}
           <div className="bg-white border border-gold-200 rounded p-5 space-y-3">
-            <p className="text-xs tracking-widest uppercase text-gold-500 font-semibold mb-1">
+            <p className="text-xs tracking-widest uppercase text-gold-500 font-semibold mb-3">
               Additional Notes
             </p>
             <div className="flex items-start gap-2.5 text-sm text-warm-700">

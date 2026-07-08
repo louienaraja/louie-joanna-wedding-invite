@@ -53,7 +53,7 @@ function Entourage() {
         <GroupLabel>Officiating Priest</GroupLabel>
         <div className="flex justify-center">
           <Card className="max-w-xs w-full text-center">
-            <NameEntry name="Fr. Dennis F. Braganza" />
+            <NameEntry name="Rev. Fr. Dennis F. Braganza" />
           </Card>
         </div>
       </FadeInSection>
