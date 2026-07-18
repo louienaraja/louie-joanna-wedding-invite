@@ -92,17 +92,20 @@ function Entourage() {
         <GroupLabel>Principal Sponsors</GroupLabel>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {[
-            "Dr. Glenn R. Puertollano",
-            "Atty. Derek R. Puertollano",
-            "Mr. Jose F. Sariego",
-            "Dr. Edmundo T. Aralar",
             "Mr. Alonzo C. Española",
-            "Dr. Lorna Luisa Caeg-Viñola",
+            "Mrs. Antonina B. Dela Cruz",
+
             "Dr. Charo Fabian-Puertollano",
+            "Atty. Derek R. Puertollano",
+            "Dr. Edmundo T. Aralar",
+            "Dr. Glenn R. Puertollano",
+            "Mrs. Idgitte E. Dasugo",
+            "Mr. Jose F. Sariego",
             "Dr. Maria Nathalia Paat-Capulong",
+            "Dr. Lorna Luisa Caeg-Viñola",
+            "Mrs. Marlene G. Gardon",
+            "Arch. Mary Joy P. San Jose",
             "Dr. Rowena N. Gan",
-            "Mrs. Mary Joy P. San Jose",
-            "Mrs. Marlene Gardon",
           ].map((name) => (
             <Card key={name} className="text-center">
               <NameEntry name={name} />
@@ -118,7 +121,10 @@ function Entourage() {
         <GroupLabel>Best Man &amp; Man of Honor</GroupLabel>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-lg mx-auto">
           <Card className="text-center">
-            <NameEntry role="Man of Honor" name="James Bryann S. Puertollano" />
+            <NameEntry
+              role="Man of Honor"
+              name="Engr. James Bryann S. Puertollano"
+            />
           </Card>
           <Card className="text-center">
             <NameEntry role="Best Man" name="Miguel Luis G. Naraja" />
