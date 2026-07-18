@@ -211,7 +211,7 @@ function Entourage() {
           <Card className="text-center col-span-1 flex flex-col items-center justify-center min-h-32">
             <NameEntry role="Ring Custodian" name="Matthew Ivan Naraja" />
           </Card>
-          <Card className="text-center col-span-1 flex flex-col items-center justify-center min-h-32">
+          <Card className="text-center col-span-2 sm:col-span-1 flex flex-col items-center justify-center min-h-32">
             <NameEntry role="Bible Custodian" name="Mercedita R. Puertollano" />
           </Card>
           <Card className="text-center col-span-2 sm:col-span-1 flex flex-col items-center justify-center min-h-32">
