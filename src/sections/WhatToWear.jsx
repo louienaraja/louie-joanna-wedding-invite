@@ -66,7 +66,7 @@ const featuredReserved = [
 // Secondary restrictions — plain text pills
 const plainReserved = [
   { name: "Gazar" },
-  { name: "Gazar façonné" },
+  { name: "Gaze façonné" },
   { name: "Duchesse satin" },
   { name: "Piña Cocoon", asterisk: true },
 ];
