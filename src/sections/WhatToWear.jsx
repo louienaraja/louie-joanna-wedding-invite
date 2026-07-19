@@ -258,8 +258,8 @@ function WhatToWear() {
                 ◆
               </span>
               <span>
-                <strong className="text-warm-800">All male guests:</strong> no
-                black pants.
+                <strong className="text-warm-800">All male guests:</strong>{" "}
+                barong required. no black pants.
               </span>
             </div>
           </div>

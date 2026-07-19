@@ -18,6 +18,11 @@ function FAQ() {
       answer: "Yes! We will provide the transportation for all the guests.",
     },
     {
+      question: "Is there a discount for group hotel bookings?",
+      answer:
+        "We're still finalizing headcounts through RSVPs — discounted group rates will be announced in the first week of September. Please check back here or watch out for updates!",
+    },
+    {
       question: "Can I bring a plus one?",
       answer:
         "Due to limited capacity, we can only accommodate those listed on your invitation.",
@@ -25,7 +30,7 @@ function FAQ() {
     {
       question: "I can't make it — can I still watch?",
       answer:
-        "We'll miss having you there in person! You can watch the ceremony live via our YouTube livestream: https://youtube.com/@joshuasariego. We can't wait to celebrate with you, even from afar",
+        "The ceremony itself won't be livestreamed, but we'll be streaming the after-party celebration live so you can join the celebration from afar! https://youtube.com/@joshuasariego",
     },
     {
       question: "What's the weather like in November?",
