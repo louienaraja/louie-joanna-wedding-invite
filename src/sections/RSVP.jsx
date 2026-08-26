@@ -128,9 +128,12 @@ function RSVP() {
           {/* ── Form ────────────────────────────────────── */}
           {status !== "success" && (
             <>
-              <p className="text-center text-warm-600 mb-8 text-base leading-relaxed">
+              <p className="text-center text-warm-600 mb-3 text-base leading-relaxed">
                 We can&apos;t wait to celebrate with you! Please let us know
                 if you&apos;ll be joining us.
+              </p>
+              <p className="text-center text-sm font-semibold text-gold-600 mb-8">
+                Please RSVP by September 12, 2026.
               </p>
 
               <form

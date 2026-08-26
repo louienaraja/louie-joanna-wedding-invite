@@ -137,6 +137,8 @@ function Travel() {
                   </strong>
                   <br />
                   Barangay Sicsican Puerto Princesa City, Palawan 5300
+                  <br />
+                  <strong className="text-warm-800">2:00 PM</strong>
                 </p>
                 <a
                   href="https://maps.google.com/?q=Divine+Mercy+Shrine+and+Parish+Puerto+Princesa"
@@ -230,7 +232,7 @@ function Travel() {
                   badge: "Preparation venue",
                   address: "Barangay, KM. 12 National Highway, Puerto Princesa City, 5300 Palawan",
                   phone: "0916 625 6665",
-                  note: "Ideally, those joining the preparation shoot should book here. If not, don't worry — we'll provide transportation for those staying elsewhere.",
+                  note: "Ideally, our entourage (excluding Principal Sponsors) joining the preparation shoot should book here. If not, don't worry — we'll provide transportation for those staying elsewhere.",
                 },
                 {
                   name: "Southwind",
@@ -364,8 +366,9 @@ function Travel() {
               ))}
             </div>
             <p className="text-warm-400 text-xs italic mt-3 leading-snug">
-              Need a travel guide to help plan these activities? Ate Dhess can
-              help arrange guided tours — contact her at 0995 200 8314.
+              Need a travel guide to help plan these activities? Ate Dhes
+              Sariego can help arrange guided tours — contact her at 0995 200
+              8314.
             </p>
           </Card>
         </div>

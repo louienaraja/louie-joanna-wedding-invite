@@ -37,13 +37,14 @@ function FAQ() {
     },
     {
       question: "Will there be transportation?",
-      answer: "Yes! We will provide the transportation for all the guests.",
+      answer:
+        "Yes! We will provide transportation to and from the church and reception venue for all our guests.",
     },
     {
       question: "Can I get packed meals for my trip?",
       answer: (
         <>
-          Yes! Ate Dhess of Dags Kitchen offers packed meals for guests
+          Yes! Ate Dhes Sariego of Dags Kitchen offers packed meals for guests
           traveling around Puerto Princesa. You may contact her at 0995 200
           8314 or visit her page:{" "}
           <a
@@ -61,7 +62,7 @@ function FAQ() {
     {
       question: "Is there a recommended travel guide for exploring Palawan?",
       answer:
-        "Yes! Ate Dhess can also help arrange travel guide services around Palawan. You may reach her at 0995 200 8314.",
+        "Yes! Ate Dhes Sariego can also help arrange travel guide services around Palawan. You may reach her at 0995 200 8314.",
     },
     {
       question: "Is there a discount for group hotel bookings?",
@@ -75,8 +76,22 @@ function FAQ() {
     },
     {
       question: "I can't make it — can I still watch?",
-      answer:
-        "The ceremony itself won't be livestreamed, but we'll be streaming the after-party celebration live so you can join the celebration from afar! https://youtube.com/@joshuasariego",
+      answer: (
+        <>
+          There won&apos;t be a livestream, but we&apos;ll have a full wedding
+          vlog by Jong, which will be uploaded a few days after the wedding —
+          we&apos;ll share the link here once it&apos;s up! In the meantime,
+          you can check out his channel — {" "}
+          <a
+            href="https://youtube.com/@joshuasariego"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={LINK_CLASS}
+          >
+            Joshua Sariego
+          </a>
+        </>
+      ),
     },
     {
       question: "What's the weather like in November?",
