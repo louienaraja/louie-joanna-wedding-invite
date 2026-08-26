@@ -145,6 +145,7 @@ function Entourage() {
             <div className="space-y-3">
               <NameEntry name="Dr. Sherley Ver M. Saladaga" />
               <NameEntry name="Dr. Heilia L. Prudenciano" />
+              <NameEntry name="Dr. Katrina S. Arevalo" />
             </div>
           </Card>
           <Card>
@@ -152,9 +153,9 @@ function Entourage() {
               Groomsmen
             </p>
             <div className="space-y-3">
-              <NameEntry name="Dr. Kevin John Yumul" />
-              <NameEntry name="Dr. Austin James Sy" />
-              <NameEntry name="Carlo Danniel Mapue" />
+              <NameEntry name="Jonathan Gabriel Agustin" />
+              <NameEntry name="Michael Angelo Go" />
+              <NameEntry name="Ian Reiner Herejias" />
             </div>
           </Card>
         </div>
