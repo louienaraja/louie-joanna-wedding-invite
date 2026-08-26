@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
+import { AnimatePresence, motion } from "framer-motion";
 import FadeInSection from "../components/FadeInSection";
 import Layout from "../components/Layout";
 import SectionTitle from "../components/SectionTitle";
@@ -49,6 +52,57 @@ const attractions = [
   },
 ];
 
+const EASE = [0.25, 0.1, 0.25, 1];
+
+function Lightbox({ attraction, onClose }) {
+  useEffect(() => {
+    if (!attraction) return;
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, [attraction, onClose]);
+
+  return createPortal(
+    <AnimatePresence>
+      {attraction && (
+        <motion.div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 p-4 md:p-8"
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.3, ease: EASE }}
+          onClick={onClose}
+        >
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, scale: 0.96 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.96 }}
+            transition={{ duration: 0.3, ease: EASE }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <button
+              onClick={onClose}
+              aria-label="Close"
+              className="absolute top-3 right-3 w-8 h-8 flex items-center justify-center text-2xl leading-none text-white [text-shadow:0_1px_4px_rgba(0,0,0,0.7)] hover:opacity-75 transition-opacity duration-200"
+            >
+              ✕
+            </button>
+            <img
+              src={attraction.img}
+              alt={attraction.name}
+              className="max-w-[90vw] max-h-[85vh] w-auto h-auto rounded shadow-xl object-contain"
+            />
+          </motion.div>
+        </motion.div>
+      )}
+    </AnimatePresence>,
+    document.body
+  );
+}
+
 function Card({ title, children }) {
   return (
     <div className="bg-white border border-gold-100 rounded p-6 shadow-sm">
@@ -61,6 +115,8 @@ function Card({ title, children }) {
 }
 
 function Travel() {
+  const [selectedAttraction, setSelectedAttraction] = useState(null);
+
   return (
     <Layout id="travel" className="bg-champagne-100">
       <FadeInSection>
@@ -283,14 +339,19 @@ function Travel() {
                   key={attraction.name}
                   className="flex flex-col items-center text-center"
                 >
-                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden shadow-sm border border-black/8 flex-shrink-0">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedAttraction(attraction)}
+                    aria-label={`View full-size photo: ${attraction.name}`}
+                    className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden shadow-sm border border-black/8 flex-shrink-0 cursor-pointer transition-transform duration-200 hover:scale-105 hover:opacity-90 focus:outline-none focus-visible:ring-2 focus-visible:ring-gold-400"
+                  >
                     <img
                       src={attraction.img}
                       alt={attraction.name}
                       className="w-full h-full object-cover"
                       style={{ objectPosition: attraction.objectPosition }}
                     />
-                  </div>
+                  </button>
                   <p className="text-[11px] md:text-xs text-warm-700 mt-2 leading-tight font-medium px-0.5">
                     {attraction.name}
                   </p>
@@ -309,6 +370,11 @@ function Travel() {
           </Card>
         </div>
       </FadeInSection>
+
+      <Lightbox
+        attraction={selectedAttraction}
+        onClose={() => setSelectedAttraction(null)}
+      />
     </Layout>
   );
 }
