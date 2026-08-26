@@ -155,7 +155,7 @@ function Entourage() {
             <div className="space-y-3">
               <NameEntry name="Jonathan Gabriel Agustin" />
               <NameEntry name="Michael Angelo Go" />
-              <NameEntry name="Ian Reiner Herejias" />
+              <NameEntry name="Reiner Ian Herejias" />
             </div>
           </Card>
         </div>

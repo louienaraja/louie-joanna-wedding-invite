@@ -123,6 +123,13 @@ function Travel() {
                   fb: "https://www.facebook.com/share/18xipr18NY/",
                 },
                 {
+                  name: "Crown Hotel Palawan at Harbour Springs",
+                  badge: "Preparation venue",
+                  address: "Barangay, KM. 12 National Highway, Puerto Princesa City, 5300 Palawan",
+                  phone: "0916 625 6665",
+                  note: "Ideally, those joining the preparation shoot should book here. If not, don't worry — we'll provide transportation for those staying elsewhere.",
+                },
+                {
                   name: "Southwind",
                   address: "South National Highway, Brgy. Tiniguiban, Puerto Princesa City",
                   phone: "+63 917 127 0045",
@@ -163,14 +170,20 @@ function Travel() {
               ].map((hotel) => (
                 <div key={hotel.name} className="py-4 first:pt-0 last:pb-0">
                   <div className="flex flex-wrap items-center gap-2">
-                    <a
-                      href={hotel.fb}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-sm font-semibold text-warm-800 hover:text-gold-500 transition-colors duration-200 underline-offset-2 hover:underline"
-                    >
-                      {hotel.name}
-                    </a>
+                    {hotel.fb ? (
+                      <a
+                        href={hotel.fb}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-sm font-semibold text-warm-800 hover:text-gold-500 transition-colors duration-200 underline-offset-2 hover:underline"
+                      >
+                        {hotel.name}
+                      </a>
+                    ) : (
+                      <span className="text-sm font-semibold text-warm-800">
+                        {hotel.name}
+                      </span>
+                    )}
                     {hotel.badge && (
                       <span
                         className={`text-[10px] tracking-widest uppercase rounded px-1.5 py-0.5 leading-none ${
@@ -192,6 +205,11 @@ function Travel() {
                   >
                     {hotel.phone}
                   </a>
+                  {hotel.note && (
+                    <p className="text-warm-400 text-xs italic mt-1.5 leading-snug">
+                      {hotel.note}
+                    </p>
+                  )}
                 </div>
               ))}
             </div>
