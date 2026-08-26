@@ -1,6 +1,53 @@
 import FadeInSection from "../components/FadeInSection";
 import Layout from "../components/Layout";
 import SectionTitle from "../components/SectionTitle";
+import undergroundRiverImg from "../assets/images/PalawanUndergroundRiver.jpg";
+import hondaBayImg from "../assets/images/HondaBayPalawan.jpg";
+import firefliesImg from "../assets/images/Fireflies.jpg";
+import sabangBeachImg from "../assets/images/SabangBeach.jpg";
+import localMarketsImg from "../assets/images/LocalMarkets.jpg";
+import ugongRockImg from "../assets/images/UgongRock.jpg";
+
+// Circular thumbnails crop toward each photo's focal point via objectPosition —
+// tune per-image if a crop still looks off once rendered.
+const attractions = [
+  {
+    name: "Underground River",
+    caption: "UNESCO World Heritage Site",
+    img: undergroundRiverImg,
+    objectPosition: "50% 60%",
+  },
+  {
+    name: "Honda Bay Island Hopping",
+    caption: "Hop between white-sand islets",
+    img: hondaBayImg,
+    objectPosition: "50% 65%",
+  },
+  {
+    name: "City Tour & Firefly Watching",
+    caption: "A magical night on the river",
+    img: firefliesImg,
+    objectPosition: "35% 40%",
+  },
+  {
+    name: "Sabang Beach",
+    caption: "Golden sands, calm waters",
+    img: sabangBeachImg,
+    objectPosition: "50% 75%",
+  },
+  {
+    name: "Local Restaurants & Markets",
+    caption: "Fresh local flavors await",
+    img: localMarketsImg,
+    objectPosition: "50% 40%",
+  },
+  {
+    name: "Ugong Rock Adventure",
+    caption: "Spelunking & zipline thrills",
+    img: ugongRockImg,
+    objectPosition: "35% 50%",
+  },
+];
 
 function Card({ title, children }) {
   return (
@@ -230,20 +277,31 @@ function Travel() {
               Make a vacation out of it! Puerto Princesa offers amazing
               experiences:
             </p>
-            <ul className="text-warm-700 text-sm space-y-1.5">
-              {[
-                "Underground River (UNESCO World Heritage Site)",
-                "Honda Bay Island Hopping",
-                "City Tour & Firefly Watching",
-                "Sabang Beach",
-                "Local restaurants & markets",
-              ].map((item) => (
-                <li key={item} className="flex items-start gap-2">
-                  <span className="text-gold-400 mt-0.5 flex-shrink-0">◆</span>
-                  <span>{item}</span>
-                </li>
+            <div className="grid grid-cols-3 gap-x-3 gap-y-5 md:gap-x-4 md:gap-y-6">
+              {attractions.map((attraction) => (
+                <div
+                  key={attraction.name}
+                  className="flex flex-col items-center text-center"
+                >
+                  <div className="w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden shadow-sm border border-black/8 flex-shrink-0">
+                    <img
+                      src={attraction.img}
+                      alt={attraction.name}
+                      className="w-full h-full object-cover"
+                      style={{ objectPosition: attraction.objectPosition }}
+                    />
+                  </div>
+                  <p className="text-[11px] md:text-xs text-warm-700 mt-2 leading-tight font-medium px-0.5">
+                    {attraction.name}
+                  </p>
+                  {attraction.caption && (
+                    <p className="text-[9px] md:text-[10px] text-warm-400 mt-0.5 leading-tight px-0.5">
+                      {attraction.caption}
+                    </p>
+                  )}
+                </div>
               ))}
-            </ul>
+            </div>
             <p className="text-warm-400 text-xs italic mt-3 leading-snug">
               Need a travel guide to help plan these activities? Ate Dhess can
               help arrange guided tours — contact her at 0995 200 8314.
