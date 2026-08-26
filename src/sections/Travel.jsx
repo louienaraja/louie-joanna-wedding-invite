@@ -244,6 +244,10 @@ function Travel() {
                 </li>
               ))}
             </ul>
+            <p className="text-warm-400 text-xs italic mt-3 leading-snug">
+              Need a travel guide to help plan these activities? Ate Dhess can
+              help arrange guided tours — contact her at 0995 200 8314.
+            </p>
           </Card>
         </div>
       </FadeInSection>

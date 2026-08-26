@@ -4,6 +4,28 @@ import Layout from "../components/Layout";
 import SectionTitle from "../components/SectionTitle";
 import FadeInSection from "../components/FadeInSection";
 
+const URL_REGEX = /(https?:\/\/[^\s]+)/g;
+const LINK_CLASS =
+  "text-gold-600 underline hover:text-gold-500 transition-colors duration-200";
+
+function linkify(text) {
+  return text.split(URL_REGEX).map((part, i) =>
+    i % 2 === 1 ? (
+      <a
+        key={i}
+        href={part}
+        target="_blank"
+        rel="noopener noreferrer"
+        className={LINK_CLASS}
+      >
+        {part}
+      </a>
+    ) : (
+      part
+    )
+  );
+}
+
 function FAQ() {
   const [openIndex, setOpenIndex] = useState(null);
 
@@ -16,6 +38,30 @@ function FAQ() {
     {
       question: "Will there be transportation?",
       answer: "Yes! We will provide the transportation for all the guests.",
+    },
+    {
+      question: "Can I get packed meals for my trip?",
+      answer: (
+        <>
+          Yes! Ate Dhess of Dags Kitchen offers packed meals for guests
+          traveling around Puerto Princesa. You may contact her at 0995 200
+          8314 or visit her page:{" "}
+          <a
+            href="https://www.facebook.com/p/Dags-Kitchen-61552201466946/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={LINK_CLASS}
+          >
+            Dags Kitchen
+          </a>
+          .
+        </>
+      ),
+    },
+    {
+      question: "Is there a recommended travel guide for exploring Palawan?",
+      answer:
+        "Yes! Ate Dhess can also help arrange travel guide services around Palawan. You may reach her at 0995 200 8314.",
     },
     {
       question: "Is there a discount for group hotel bookings?",
@@ -107,7 +153,9 @@ function FAQ() {
                       style={{ overflow: "hidden" }}
                     >
                       <div className="px-6 py-4 text-warm-700 text-sm leading-relaxed border-t border-gold-100 bg-champagne-50/60">
-                        {faq.answer}
+                        {typeof faq.answer === "string"
+                          ? linkify(faq.answer)
+                          : faq.answer}
                       </div>
                     </motion.div>
                   )}
