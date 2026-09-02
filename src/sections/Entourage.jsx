@@ -93,13 +93,12 @@ function Entourage() {
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
           {[
             "Mr. Alonzo C. Española",
-            "Mrs. Antonina B. Dela Cruz",
-
+            "Mrs. Antonia B. Dela Cruz",
             "Dr. Charo Fabian-Puertollano",
             "Atty. Derek R. Puertollano",
             "Dr. Edmundo T. Aralar",
             "Dr. Glenn R. Puertollano",
-            "Mrs. Idgitte E. Dasugo",
+            "Ms. Idgitte E. Dasugo",
             "Mr. Jose F. Sariego",
             "Dr. Maria Nathalia Paat-Capulong",
             "Dr. Lorna Luisa Caeg-Viñola",
