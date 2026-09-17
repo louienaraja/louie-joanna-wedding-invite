@@ -171,9 +171,9 @@ function Entourage() {
               Candle
             </p>
             <div className="space-y-3">
-              <NameEntry name="Roselle Niña Christine T. Sariego-Llacuña" />
+              <NameEntry name="Amanda Regina Gonzales-Cortez" />
               <div className="text-center text-gold-300 text-xs">&amp;</div>
-              <NameEntry name="Austin James Sy" />
+              <NameEntry name="Dr. Austin James Sy" />
             </div>
           </Card>
           <Card>
@@ -181,9 +181,9 @@ function Entourage() {
               Veil
             </p>
             <div className="space-y-3">
-              <NameEntry name="Amanda Regina Gonzales-Cortez" />
+              <NameEntry name="Roselle Niña Christine T. Sariego-Llacuña" />
               <div className="text-center text-gold-300 text-xs">&amp;</div>
-              <NameEntry name="Kevin John Yumul" />
+              <NameEntry name="Dr. Kevin John Yumul" />
             </div>
           </Card>
           <Card>
