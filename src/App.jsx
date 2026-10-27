@@ -6,6 +6,7 @@ import WhatToWear from "./sections/WhatToWear";
 import RSVP from "./sections/RSVP";
 import Entourage from "./sections/Entourage";
 import FAQ from "./sections/FAQ";
+import SeatFind from "./sections/SeatFind";
 import Footer from "./components/Footer";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <RSVP />
       <Entourage />
       <FAQ />
+      <SeatFind />
       <Footer />
     </div>
   );
