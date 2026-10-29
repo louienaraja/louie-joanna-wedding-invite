@@ -2,6 +2,7 @@ import { useState, useMemo, useRef } from "react";
 import Layout from "../components/Layout";
 import SectionTitle from "../components/SectionTitle";
 import FadeInSection from "../components/FadeInSection";
+import SeatMap from "../components/SeatMap";
 
 const GUEST_LIST = [
   // VIP 1
@@ -24,7 +25,7 @@ const GUEST_LIST = [
   { name: "Miguel Luis Naraja", table: "VIP 2" },
   { name: "Bryann S. Puertollano", table: "VIP 2" },
   { name: "Mercedita Puertollano", table: "VIP 2" },
-  { name: "Arnel Puertollano", "table": "VIP 2" },
+  { name: "Arnel Puertollano", table: "VIP 2" },
   { name: "Antonia Bernabe Dela Cruz", table: "VIP 2" },
   { name: "Idgitte E. Dasugo", table: "VIP 2" },
 
@@ -116,7 +117,7 @@ const GUEST_LIST = [
   { name: "Aileen Fabellon", table: "Table 8" },
   { name: "Lebe Besa", table: "Table 8" },
   { name: "Judith Dela Chica", table: "Table 8" },
-  { name: "Norma Lim", "table": "Table 8" },
+  { name: "Norma Lim", table: "Table 8" },
   { name: "Cita Lim", table: "Table 8" },
   { name: "Laiza Magallon", table: "Table 8" },
   { name: "Nelit Magallon", table: "Table 8" },
@@ -283,6 +284,9 @@ export default function SeatFind() {
                 </p>
               </div>
             )}
+
+            {/* Floor plan: the selected guest's table glows */}
+            <SeatMap activeTable={selectedGuest?.table} className="pt-2" />
           </div>
         </div>
       </FadeInSection>
