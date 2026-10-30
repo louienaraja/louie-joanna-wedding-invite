@@ -54,18 +54,20 @@ function TableShape({ table, active, dimmed }) {
       {/* Expanding ring — only on the active table */}
       {active &&
         (isLong ? (
-          <rect
-            className="seatmap-ring"
-            x={table.x - table.w / 2}
-            y={table.y - table.h / 2}
-            width={table.w}
-            height={table.h}
-            rx={6}
-            transform={`rotate(${table.rotate} ${table.x} ${table.y})`}
-            fill="none"
-            stroke={COLORS.activeStroke}
-            strokeWidth={2}
-          />
+          // Rotation lives on the wrapper: the CSS ring animation overrides any transform on the rect itself.
+          <g transform={`rotate(${table.rotate} ${table.x} ${table.y})`}>
+            <rect
+              className="seatmap-ring"
+              x={table.x - table.w / 2}
+              y={table.y - table.h / 2}
+              width={table.w}
+              height={table.h}
+              rx={6}
+              fill="none"
+              stroke={COLORS.activeStroke}
+              strokeWidth={2}
+            />
+          </g>
         ) : (
           <circle
             className="seatmap-ring"
