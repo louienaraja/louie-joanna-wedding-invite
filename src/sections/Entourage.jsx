@@ -206,7 +206,7 @@ function Entourage() {
         <GroupLabel>Bearers &amp; Flower Girls</GroupLabel>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
           <Card className="text-center col-span-1 flex flex-col items-center justify-center min-h-32">
-            <NameEntry role="Coin Custodian" name="Monica Louise Naraja" />
+            <NameEntry role="Coin Custodian" name="Monica Louise Naraja, CPA" />
           </Card>
           <Card className="text-center col-span-1 flex flex-col items-center justify-center min-h-32">
             <NameEntry role="Ring Custodian" name="Matthew Ivan Naraja" />
