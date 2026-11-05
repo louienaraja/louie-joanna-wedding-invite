@@ -134,13 +134,15 @@ const GUEST_LIST = [
   { name: "Julius Anskar Garay", table: "Table 9" },
   { name: "Siva Zumthor Garay", table: "Table 9" },
   { name: "Carol Angelica Ilao", table: "Table 9" },
-  { name: "Dr. Vinola's Daughter", table: "Table 9" },
+  { name: "Joanna Viñola", table: "Table 9" },
 
   // TABLE 10
   { name: "Joan Bataga", table: "Table 10" },
   { name: "Marissa Soriano", table: "Table 10" },
   { name: "Minerva Gan Casanova", table: "Table 10" },
-  { name: "Dr. Gan's Sister", table: "Table 10" },
+  { name: "Roy Sariego", table: "Table 10" },
+  { name: "Angelly Samala", table: "Table 10" },
+  { name: "Josh Samala", table: "Table 10" },
 ];
 
 const inputClass =

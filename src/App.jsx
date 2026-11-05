@@ -14,13 +14,13 @@ function App() {
     <div className="min-h-screen bg-champagne-50">
       <Navbar />
       <Hero />
-      <OurStory />
+      <SeatFind />
+      {/* <OurStory /> */}
       <Travel />
       <WhatToWear />
       <RSVP />
       <Entourage />
       <FAQ />
-      <SeatFind />
       <Footer />
     </div>
   );
