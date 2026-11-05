@@ -98,6 +98,7 @@ const GUEST_LIST = [
   { name: "Yolanda Sariego", table: "Table 6" },
   { name: "Dona Sariego", table: "Table 6" },
   { name: "Daniella Sariego", table: "Table 6" },
+  { name: "Thirdy Llacuna", table: "Table 6" },
 
   // TABLE 7
   { name: "Mely Española", table: "Table 7" },
