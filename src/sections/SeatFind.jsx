@@ -101,15 +101,15 @@ const GUEST_LIST = [
   { name: "Thirdy Llacuna", table: "Table 6" },
 
   // TABLE 7
-  { name: "Mely Española", table: "Table 7" },
-  { name: "Marita Española", table: "Table 7" },
+  { name: "Bong Ferraris", table: "Table 7" },
+  { name: "Mercy Ferraris", table: "Table 7" },
   { name: "Manuel Española", table: "Table 7" },
   { name: "Dante Diaz", table: "Table 7" },
   { name: "Dianza Merlos", table: "Table 7" },
   { name: "Bianca Merlos", table: "Table 7" },
   { name: "Raymund Española", table: "Table 7" },
   { name: "Cyril Garcia", table: "Table 7" },
-  { name: "Joy Mabunga", table: "Table 7" },
+  { name: "Jasmin Patacsil", table: "Table 7" },
   { name: "Luis Miguel Española", table: "Table 7" },
 
   // TABLE 8
@@ -143,6 +143,8 @@ const GUEST_LIST = [
   { name: "Roy Sariego", table: "Table 10" },
   { name: "Angelly Samala", table: "Table 10" },
   { name: "Josh Samala", table: "Table 10" },
+  { name: "Manuel Mendoza", table: "Table 10" },
+  // { name: " Mendoza", table: "Table 10" },
 ];
 
 const inputClass =
