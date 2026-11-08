@@ -144,7 +144,7 @@ const GUEST_LIST = [
   { name: "Angelly Samala", table: "Table 10" },
   { name: "Josh Samala", table: "Table 10" },
   { name: "Manuel Mendoza", table: "Table 10" },
-  // { name: " Mendoza", table: "Table 10" },
+  { name: "Grace Mendoza", table: "Table 10" },
 ];
 
 const inputClass =
