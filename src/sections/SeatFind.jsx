@@ -84,8 +84,8 @@ const GUEST_LIST = [
   { name: "Aaron Lopez", table: "Table 5" },
   { name: "Athena Euna Norelle Suazo", table: "Table 5" },
   { name: "Ariana Una Lopez", table: "Table 5" },
-  { name: "Tita Mylene Cabredo", table: "Table 5" },
-  { name: "Tita Mylene Cabredo Companion", table: "Table 5" },
+  { name: "Manuel Mendoza", table: "Table 5" },
+  { name: "Grace Mendoza", table: "Table 5" },
 
   // TABLE 6
   { name: "Roselle Niña Christine Sariego-Llacuna", table: "Table 6" },
@@ -143,8 +143,6 @@ const GUEST_LIST = [
   { name: "Roy Sariego", table: "Table 10" },
   { name: "Angelly Samala", table: "Table 10" },
   { name: "Josh Samala", table: "Table 10" },
-  { name: "Manuel Mendoza", table: "Table 10" },
-  { name: "Grace Mendoza", table: "Table 10" },
 ];
 
 const inputClass =
